@@ -1,0 +1,131 @@
+2026-02-24 15:36:00,558 | INFO     | scraper | Scrape started | url=https://www.reddit.com/r/Entrepreneur/ | max_pages=10 | pagination=infinite_scroll | headless=False | output=output/sellers.csv
+2026-02-24 15:36:00,963 | INFO     | scraper | Launching Chromium (headless=False)
+2026-02-24 15:36:01,946 | INFO     | scraper | Navigating to https://www.reddit.com/r/Entrepreneur/ (attempt 1/3)
+2026-02-24 15:36:08,810 | INFO     | scraper | No specific selector matched — waiting 5s for page to settle
+2026-02-24 15:36:13,822 | INFO     | scraper | No specific selector matched — waiting 5s for page to settle
+2026-02-24 15:36:18,826 | WARNING  | scraper | DOM extraction failed: Page.evaluate: Target page, context or browser has been closed
+2026-02-24 15:36:18,835 | ERROR    | scraper | Fatal error during scraping
+Traceback (most recent call last):
+  File "C:\Users\admin\ScraperReddit\scraper.py", line 443, in scrape
+    page_data_list = _paginate_infinite_scroll(page, max_pages)
+  File "C:\Users\admin\ScraperReddit\scraper.py", line 264, in _paginate_infinite_scroll
+    sellers = parse_page(page.content())
+                         ~~~~~~~~~~~~^^
+  File "C:\Users\admin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\sync_api\_generated.py", line 8902, in content
+    return mapping.from_maybe_impl(self._sync(self._impl_obj.content()))
+                                   ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\admin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_page.py", line 534, in content
+    return await self._main_frame.content()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_frame.py", line 416, in content
+    return await self._channel.send("content")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py", line 61, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )
+    ^
+  File "C:\Users\admin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\playwright\_impl\_connection.py", line 528, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.content: Target page, context or browser has been closed
+2026-02-24 15:36:19,068 | INFO     | scraper | Browser closed
+2026-02-24 15:36:19,095 | WARNING  | scraper | No sellers extracted — check selectors or target URL
+2026-02-24 15:42:41,720 | INFO     | scraper | Applying preset: custom
+2026-02-24 15:42:41,730 | INFO     | scraper | Scrape started | url=https://books.toscrape.com/ | max_pages=10 | pagination=url_param | headless=False | output=output/sellers.csv
+2026-02-24 15:42:42,146 | INFO     | scraper | Launching Chromium (headless=False)
+2026-02-24 15:42:42,770 | INFO     | scraper | Navigating to https://books.toscrape.com/ (attempt 1/3)
+2026-02-24 15:43:47,146 | INFO     | scraper | Navigating to https://books.toscrape.com/?page=1 (attempt 1/3)
+2026-02-24 15:44:52,965 | INFO     | scraper | Navigating to https://books.toscrape.com/?page=2 (attempt 1/3)
+2026-02-24 15:48:08,009 | INFO     | scraper | Applying preset: books
+2026-02-24 15:48:08,015 | INFO     | scraper | Scrape started | url=https://books.toscrape.com/ | max_pages=3 | pagination=next_button | headless=False | output=output/sellers.csv
+2026-02-24 15:48:08,433 | INFO     | scraper | Launching Chromium (headless=False)
+2026-02-24 15:48:09,004 | INFO     | scraper | Navigating to https://books.toscrape.com/ (attempt 1/3)
+2026-02-24 15:48:29,314 | INFO     | scraper | Page 1: 20 found, 20 new, 20 total
+2026-02-24 15:48:29,315 | INFO     | scraper | Page 2: 20 found, 20 new, 40 total
+2026-02-24 15:48:29,315 | INFO     | scraper | Page 3: 20 found, 20 new, 60 total
+2026-02-24 15:48:29,630 | INFO     | scraper | Browser closed
+2026-02-24 15:48:29,674 | INFO     | scraper.exporter | CSV written: 60 rows → C:\Users\admin\ScraperReddit\output\sellers.csv
+2026-02-24 15:48:29,675 | INFO     | scraper | Exported 60 sellers to C:\Users\admin\ScraperReddit\output\sellers.csv
+2026-02-24 15:50:47,102 | INFO     | scraper | Applying preset: etsy
+2026-02-24 15:50:47,106 | INFO     | scraper | Scrape started | url=https://www.etsy.com/search?q=handmade&explicit=1&ship_to=US | max_pages=1 | pagination=url_param | headless=False | output=output/sellers.csv
+2026-02-24 15:50:47,521 | INFO     | scraper | Launching Chromium (headless=False)
+2026-02-24 15:50:48,069 | INFO     | scraper | Navigating to https://www.etsy.com/search?q=handmade&explicit=1&ship_to=US (attempt 1/3)
+2026-02-24 15:51:08,799 | INFO     | scraper | No specific selector matched — waiting 5s for page to settle
+2026-02-24 15:51:13,807 | WARNING  | scraper | Page was closed — creating a fresh page (attempt 1)
+2026-02-24 15:51:13,920 | INFO     | scraper | Navigating to https://www.etsy.com/search?q=handmade&explicit=1&ship_to=US&page=1 (attempt 1/3)
+2026-02-24 15:51:21,151 | INFO     | scraper | No specific selector matched — waiting 5s for page to settle
+2026-02-24 15:51:26,157 | WARNING  | scraper | Page is not alive — returning empty data
+2026-02-24 15:51:26,157 | INFO     | scraper | URL-param page 1: empty page detected — stopping
+2026-02-24 15:51:26,428 | INFO     | scraper | Browser closed
+2026-02-24 15:51:26,450 | WARNING  | scraper | No sellers extracted — check selectors or target URL
+2026-02-24 15:58:03,224 | INFO     | scraper | Applying preset: books
+2026-02-24 15:58:03,230 | INFO     | scraper | Scrape started | url=https://books.toscrape.com/ | max_pages=1 | pagination=next_button | headless=True | output=output/sellers.csv
+2026-02-24 15:58:03,635 | INFO     | scraper | Launching Chromium (headless=True)
+2026-02-24 15:58:03,894 | INFO     | scraper | Navigating to https://books.toscrape.com/ (attempt 1/3)
+2026-02-24 15:58:23,873 | INFO     | scraper | Page 1: 20 found, 20 new, 20 total
+2026-02-24 15:58:23,968 | INFO     | scraper | Browser closed
+2026-02-24 15:58:23,995 | INFO     | scraper.exporter | CSV written: 20 rows → C:\Users\admin\ScraperReddit\output\sellers.csv
+2026-02-24 15:58:23,997 | INFO     | scraper | Exported 20 sellers to C:\Users\admin\ScraperReddit\output\sellers.csv
+2026-02-24 15:59:45,594 | INFO     | scraper | Applying preset: etsy
+2026-02-24 15:59:45,599 | INFO     | scraper | Scrape started | url=https://www.etsy.com/search?q=handmade&explicit=1&ship_to=US | max_pages=3 | pagination=url_param | headless=False | output=output/sellers.csv
+2026-02-24 15:59:45,993 | INFO     | scraper | Launching Chromium (headless=False)
+2026-02-24 15:59:46,521 | INFO     | scraper | Navigating to https://www.etsy.com/search?q=handmade&explicit=1&ship_to=US (attempt 1/3)
+2026-02-24 15:59:51,499 | WARNING  | scraper | Page is not alive — skipping wait_for_content
+2026-02-24 15:59:51,506 | WARNING  | scraper | Page was closed — creating a fresh page (attempt 1)
+2026-02-24 15:59:51,633 | INFO     | scraper | Navigating to https://www.etsy.com/search?q=handmade&explicit=1&ship_to=US&page=1 (attempt 1/3)
+2026-02-24 15:59:54,078 | WARNING  | scraper | Page is not alive — skipping wait_for_content
+2026-02-24 15:59:54,080 | WARNING  | scraper | Page is not alive — returning empty data
+2026-02-24 15:59:54,081 | INFO     | scraper | URL-param page 1: empty page detected — stopping
+2026-02-24 15:59:54,372 | INFO     | scraper | Browser closed
+2026-02-24 15:59:54,394 | WARNING  | scraper | No sellers extracted — check selectors or target URL
+2026-02-24 16:00:07,422 | INFO     | scraper | Applying preset: etsy
+2026-02-24 16:00:07,427 | INFO     | scraper | Scrape started | url=https://www.etsy.com/search?q=handmade&explicit=1&ship_to=US | max_pages=3 | pagination=url_param | headless=False | output=output/sellers.csv
+2026-02-24 16:00:07,830 | INFO     | scraper | Launching Chromium (headless=False)
+2026-02-24 16:00:08,365 | INFO     | scraper | Navigating to https://www.etsy.com/search?q=handmade&explicit=1&ship_to=US (attempt 1/3)
+2026-02-24 16:00:14,217 | INFO     | scraper | No specific selector matched — waiting 5s for page to settle
+2026-02-24 16:00:19,226 | WARNING  | scraper | Page was closed — creating a fresh page (attempt 1)
+2026-02-24 16:00:19,348 | INFO     | scraper | Navigating to https://www.etsy.com/search?q=handmade&explicit=1&ship_to=US&page=1 (attempt 1/3)
+2026-02-24 16:00:46,842 | INFO     | scraper | Applying preset: books
+2026-02-24 16:00:46,847 | INFO     | scraper | Scrape started | url=https://books.toscrape.com/ | max_pages=3 | pagination=next_button | headless=False | output=output/sellers.csv
+2026-02-24 16:00:47,255 | INFO     | scraper | Launching Chromium (headless=False)
+2026-02-24 16:00:47,767 | INFO     | scraper | Navigating to https://books.toscrape.com/ (attempt 1/3)
+2026-02-24 16:01:14,603 | INFO     | scraper | Page 1: 20 found, 20 new, 20 total
+2026-02-24 16:01:14,604 | INFO     | scraper | Page 2: 20 found, 20 new, 40 total
+2026-02-24 16:01:14,605 | INFO     | scraper | Page 3: 20 found, 20 new, 60 total
+2026-02-24 16:01:14,962 | INFO     | scraper | Browser closed
+2026-02-24 16:01:14,988 | INFO     | scraper.exporter | CSV written: 60 rows → C:\Users\admin\ScraperReddit\output\sellers.csv
+2026-02-24 16:01:14,989 | INFO     | scraper | Exported 60 sellers to C:\Users\admin\ScraperReddit\output\sellers.csv
+2026-02-24 16:01:35,052 | INFO     | scraper | Applying preset: ebay
+2026-02-24 16:01:35,056 | INFO     | scraper | Scrape started | url=https://www.ebay.com/sch/i.html?_nkw=electronics | max_pages=3 | pagination=url_param | headless=False | output=output/sellers.csv
+2026-02-24 16:01:35,478 | INFO     | scraper | Launching Chromium (headless=False)
+2026-02-24 16:01:36,028 | INFO     | scraper | Navigating to https://www.ebay.com/sch/i.html?_nkw=electronics (attempt 1/3)
+2026-02-24 16:02:11,059 | INFO     | scraper | No specific selector matched — waiting 5s for page to settle
+2026-02-24 16:02:16,070 | INFO     | scraper | Navigating to https://www.ebay.com/sch/i.html?_nkw=electronics&_pgn=1 (attempt 1/3)
+2026-02-24 16:02:51,935 | INFO     | scraper | No specific selector matched — waiting 5s for page to settle
+2026-02-24 16:02:56,949 | INFO     | scraper.parser | Parsed page: 0 cards → 0 sellers (0 skipped, 0 dupes)
+2026-02-24 16:02:56,949 | INFO     | scraper | URL-param page 1: empty page detected — stopping
+2026-02-24 16:02:57,296 | INFO     | scraper | Browser closed
+2026-02-24 16:02:57,318 | WARNING  | scraper | No sellers extracted — check selectors or target URL
+2026-02-24 16:03:24,983 | INFO     | scraper | Applying preset: amazon
+2026-02-24 16:03:24,988 | INFO     | scraper | Scrape started | url=https://www.amazon.com/gp/offer-listing/B0 | max_pages=3 | pagination=url_param | headless=False | output=output/sellers.csv
+2026-02-24 16:03:25,401 | INFO     | scraper | Launching Chromium (headless=False)
+2026-02-24 16:03:25,907 | INFO     | scraper | Navigating to https://www.amazon.com/gp/offer-listing/B0 (attempt 1/3)
+2026-02-24 16:03:26,256 | WARNING  | scraper | Navigation attempt 1 failed: Page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at https://www.amazon.com/gp/offer-listing/B0
+Call log:
+  - navigating to "https://www.amazon.com/gp/offer-listing/B0", waiting until "domcontentloaded"
+
+2026-02-24 16:04:17,531 | INFO     | scraper | Applying preset: amazon
+2026-02-24 16:04:17,535 | INFO     | scraper | Scrape started | url=https://www.amazon.in/s?k=mobiles&rh=n%3A1389401031&ref=nb_sb_noss | max_pages=3 | pagination=url_param | headless=False | output=output/sellers.csv
+2026-02-24 16:04:17,942 | INFO     | scraper | Launching Chromium (headless=False)
+2026-02-24 16:04:18,480 | INFO     | scraper | Navigating to https://www.amazon.in/s?k=mobiles&rh=n%3A1389401031&ref=nb_sb_noss (attempt 1/3)
+2026-02-24 16:04:55,161 | INFO     | scraper | No specific selector matched — waiting 5s for page to settle
+2026-02-24 16:05:00,172 | INFO     | scraper | Navigating to https://www.amazon.in/s?k=mobiles&rh=n%3A1389401031&ref=nb_sb_noss&startIndex=1 (attempt 1/3)
+2026-02-24 16:05:37,081 | INFO     | scraper | No specific selector matched — waiting 5s for page to settle
+2026-02-24 16:05:42,404 | INFO     | scraper.parser | Parsed page: 0 cards → 0 sellers (0 skipped, 0 dupes)
+2026-02-24 16:05:42,404 | INFO     | scraper | URL-param page 1: empty page detected — stopping
+2026-02-24 16:05:42,630 | INFO     | scraper | Browser closed
+2026-02-24 16:05:42,653 | WARNING  | scraper | No sellers extracted — check selectors or target URL
